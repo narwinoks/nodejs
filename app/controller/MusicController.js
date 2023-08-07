@@ -58,11 +58,46 @@ const musicTrack = async (req, res, next) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+const getNowPlaying = async (req, res) => {
+  const token = await getSpotifyToken();
+  const url = "https://api.spotify.com/v1/me/player/currently-playing";
+  try {
+    const { data } = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token.access_token}`,
+      },
+    });
+    if(data.length ==0){
+      res.status(404).json({ success: false, message:"data is empty"});
+    }
+    const isPlaying = data.is_playing;
+    const title = data.item.name;
+    const artist = data.item.artists.map((_artist) => _artist.name).join(", ");
+    const album = data.item.album.name;
+    const albumImageUrl = data.item.album.images[0].url;
+    const songUrl = data.item.external_urls.spotify;
+    const embedUrl = songUrl.split("track").join("embed/track");
+    const response = {
+      isPlaying,
+      title,
+      artist,
+      album,
+      albumImageUrl,
+      songUrl,
+      embedUrl,
+    };
+
+    res.json({ success: true, message: "successfully", data: response });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
 const testingLogin = (req, res) => {
   const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REDIRECT_URI } =
     process.env;
 
-  const SCOPES = "user-top-read";
+  const SCOPES = "user-top-read user-read-playback-state";
   const authorizeUrl =
     "https://accounts.spotify.com/authorize?" +
     querystring.stringify({
@@ -118,4 +153,5 @@ export default {
   musicTrack,
   testingLogin,
   callback,
+  getNowPlaying,
 };
