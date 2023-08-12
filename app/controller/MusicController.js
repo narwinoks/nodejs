@@ -34,7 +34,7 @@ const musicTrack = async (req, res, next) => {
   const url = "https://api.spotify.com/v1/me/top/tracks";
   const params = {
     limit: 10,
-    time_range: "medium_term",
+    time_range: "short_term",
   };
 
   try {
@@ -68,8 +68,8 @@ const getNowPlaying = async (req, res) => {
         Authorization: `Bearer ${token.access_token}`,
       },
     });
-    if(data.length ==0){
-      res.status(404).json({ success: false, message:"data is empty"});
+    if (data.length == 0) {
+      res.status(404).json({ success: false, message: "data is empty" });
     }
     const isPlaying = data.is_playing;
     const title = data.item.name;
