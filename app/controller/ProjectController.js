@@ -1,5 +1,5 @@
 import { promises as fsPromises } from "fs";
-import data from "../_data/data.json" assert { type: "json" };
+// import data from "../_data/data.json" assert { type: "json" };
 import path from "path";
 import processBase64Image from "../helpers/processBase64Image.js";
 
@@ -8,9 +8,9 @@ import processBase64Image from "../helpers/processBase64Image.js";
 // const dataPath = path.join(__dirname, "../_data/data.json");
 
 const index = (req, res) => {
-  const jsonData = data.projects;
+  // const jsonData = data.projects;
 
-  res.json({ message: "successfully", data: jsonData });
+  res.json({ message: "successfully", data: {} });
 };
 // const create = async (req, res) => {
 //   try {
