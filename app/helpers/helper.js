@@ -21,7 +21,7 @@ function formatDateToDmy(dateString) {
 
   const customMonth = monthMappings[month];
 
-  return `${day}-${customMonth}-${year}`;
+  return `${day} ${customMonth} ${year}`;
 }
 
 export default {
