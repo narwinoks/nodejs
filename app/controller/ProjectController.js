@@ -3,9 +3,9 @@ import data from "../_data/data.json" assert { type: "json" };
 import path from "path";
 import processBase64Image from "../helpers/processBase64Image.js";
 
-const __filename = new URL(import.meta.url).pathname;
-const __dirname = path.dirname(__filename);
-const dataPath = path.join(__dirname, "../_data/data.json");
+// const __filename = new URL(import.meta.url).pathname;
+// const __dirname = path.dirname(__filename);
+// const dataPath = path.join(__dirname, "../_data/data.json");
 
 const index = (req, res) => {
   const jsonData = data.projects;
