@@ -12,69 +12,69 @@ const index = (req, res) => {
 
   res.json({ message: "successfully", data: jsonData });
 };
-const create = async (req, res) => {
-  try {
-    const image = req.body.image;
-    const fileName = await processBase64Image(image);
-    // res.json({ message: "successfully", data: fileName });
-    const newProject = {
-      id: Date.now(),
-      ...req.body,
-    };
-    data.projects.push(newProject);
-    await fsPromises.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
+// const create = async (req, res) => {
+//   try {
+//     const image = req.body.image;
+//     const fileName = await processBase64Image(image);
+//     // res.json({ message: "successfully", data: fileName });
+//     const newProject = {
+//       id: Date.now(),
+//       ...req.body,
+//     };
+//     data.projects.push(newProject);
+//     await fsPromises.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
 
-    res.json({ message: "Project added successfully", data: newProject });
-  } catch (err) {
-    console.log(err.message);
-    res.status(500).json({ message: "Error writing data" });
-  }
-};
-const edit = async (req, res) => {
-  const itemId = parseInt(req.params.id);
-  const updatedData = req.body;
+//     res.json({ message: "Project added successfully", data: newProject });
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(500).json({ message: "Error writing data" });
+//   }
+// };
+// const edit = async (req, res) => {
+//   const itemId = parseInt(req.params.id);
+//   const updatedData = req.body;
 
-  try {
-    const itemToUpdate = data.projects.find((item) => item.id === itemId);
+//   try {
+//     const itemToUpdate = data.projects.find((item) => item.id === itemId);
 
-    if (!itemToUpdate) {
-      return res.status(404).json({ message: "Item not found" });
-    }
+//     if (!itemToUpdate) {
+//       return res.status(404).json({ message: "Item not found" });
+//     }
 
-    Object.assign(itemToUpdate, updatedData);
+//     Object.assign(itemToUpdate, updatedData);
 
-    await fsPromises.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
-    res.json({ message: "Item updated successfully", data: itemToUpdate });
-  } catch (err) {
-    console.log(err.message);
-    res.status(500).send("Error updating data");
-  }
-};
+//     await fsPromises.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
+//     res.json({ message: "Item updated successfully", data: itemToUpdate });
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(500).send("Error updating data");
+//   }
+// };
 
-const remove = async (req, res) => {
-  const itemId = parseInt(req.params.id);
+// const remove = async (req, res) => {
+//   const itemId = parseInt(req.params.id);
 
-  try {
-    const itemIndex = data.projects.findIndex((item) => item.id === itemId);
+//   try {
+//     const itemIndex = data.projects.findIndex((item) => item.id === itemId);
 
-    if (itemIndex === -1) {
-      return res.status(404).json({ message: "Item not found" });
-    }
+//     if (itemIndex === -1) {
+//       return res.status(404).json({ message: "Item not found" });
+//     }
 
-    const removedItem = data.projects.splice(itemIndex, 1)[0];
+//     const removedItem = data.projects.splice(itemIndex, 1)[0];
 
-    await fsPromises.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
+//     await fsPromises.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
 
-    res.json({ message: "Item removed successfully", data: removedItem });
-  } catch (err) {
-    console.log(err.message);
-    res.status(500).send("Error removing data");
-  }
-};
+//     res.json({ message: "Item removed successfully", data: removedItem });
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(500).send("Error removing data");
+//   }
+// };
 
 export default {
-  create,
+  // create,
   index,
-  edit,
-  remove,
+  // edit,
+  // remove,
 };
