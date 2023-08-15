@@ -21,7 +21,7 @@ router.get("/github/info", GithubController.getStatGithub);
 // project route
 router.get("/projects", ProjectController.index);
 router.post("/projects", ProjectController.create);
-router.put("/projects/:id", ProjectController.edit);
+router.put("/projects/:id", ProjectController.update);
 router.delete("/projects/:id", ProjectController.remove);
 
 export default router;
