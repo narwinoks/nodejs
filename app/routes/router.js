@@ -3,6 +3,7 @@ const router = express.Router();
 import musicController from "../controller/MusicController.js";
 import BlogController from "../controller/BlogController.js";
 import GithubController from "../controller/GithubController.js";
+import ProjectController from "../controller/ProjectController.js";
 router.get("/", function (req, res) {
   res.json({ success: true, message: "successfully", data: {} });
 });
