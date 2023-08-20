@@ -1,0 +1,86 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Accurate Gatotkaca ID",
+      "github": "",
+      "production": "http://accurate.gatotkaca.id",
+      "description": "website for recording sales transactions from PT Inovasi Bakti Nusantara",
+      "tech": "PHP Laravel  Javascript",
+      "image": ""
+    },
+    {
+      "id": 12,
+      "title": "Gateway WhatsApp",
+      "github": "https://github.com/narwinoks/gatway-whatsapp",
+      "production": "",
+      "description": "Api For Bot WhatsApp Services Send Messages to User Or Group",
+      "tech": "Javascript Node Js ",
+      "image": ""
+    },
+    {
+      "id": 13,
+      "title": "Gateway Bca",
+      "github": "#",
+      "production": "#",
+      "description": "Api For view balance For BCA Bank",
+      "tech": "Java SpringBoot",
+      "image": ""
+    },
+    {
+      "id": 14,
+      "title": "Api Resize Image",
+      "github": "https://github.com/narwinoks/laravel-rest",
+      "production": "",
+      "description": "Api For Resize Image",
+      "tech": "PHP Laravel",
+      "image": ""
+    },
+    {
+      "id": 15,
+      "title": "Eyekind",
+      "github": "",
+      "production": "http://eyekind.cyberolympus.com/",
+      "description": "Eyewear Information Website",
+      "tech": "PHP Laravel  Javascript",
+      "image": ""
+    },
+    {
+      "id": 16,
+      "title": "Class Online",
+      "github": "https://github.com/narwinoks/class-online",
+      "production": "#",
+      "description": "Build Online course web inspiration codepolitan",
+      "tech": "PHP Laravel  Javascript Node js Express",
+      "image": ""
+    },
+    {
+      "id": 17,
+      "title": "E Commerce App",
+      "github": "https://github.com/narwinoks/Ecommerce-Server",
+      "production": "#",
+      "description": "Build simple E Commerce web app ",
+      "tech": "react js tailwind css  Javascript Node js Express",
+      "image": ""
+    },
+    {
+      "id": 18,
+      "title": "Booking App",
+      "github": "https://github.com/narwinoks/booking-event-server",
+      "production": "#",
+      "description": "Build simple Booking App Rest Api ",
+      "tech": "PHP Laravel And Midtrans payment gateway",
+      "image": ""
+    },
+    {
+      "id": 19,
+      "title": "Furnizing",
+      "github": "#",
+      "production": "http://furnizing.cyberolympus.com/",
+      "description": "Blog and show case project web apps from cyber olympus ",
+      "tech": "PHP Laravel  Javascript",
+      "image": ""
+    }
+  ],
+  "skills": []
+}

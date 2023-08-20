@@ -1,6 +1,7 @@
-import myJson from "./jsonFile.json" assert { type: "json" };
+import data from "./data.json" assert { type: "json" };
 const index = (req, res) => {
-  res.json({ message: "successfully project index" });
+  const jsonData = data.projects;
+  res.json({ message: "successfully", data: jsonData });
 };
 const create = (req, res) => {
   res.json({ message: "successfully project create" });
