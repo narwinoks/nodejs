@@ -1,7 +1,6 @@
 import data from "./data.json" assert { type: "json" };
 const index = (req, res) => {
-  const jsonData = data.projects;
-  res.json({ message: "successfully", data: jsonData });
+  res.json({ message: "successfully", data: {} });
 };
 const create = (req, res) => {
   res.json({ message: "successfully project create" });
