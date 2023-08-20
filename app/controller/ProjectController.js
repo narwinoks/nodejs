@@ -1,4 +1,3 @@
-import data from "./data.json" assert { type: "json" };
 const index = (req, res) => {
   res.json({ message: "successfully", data: {} });
 };
