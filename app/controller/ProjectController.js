@@ -1,3 +1,4 @@
+import myJson from "./jsonFile.json" assert { type: "json" };
 const index = (req, res) => {
   res.json({ message: "successfully project index" });
 };
