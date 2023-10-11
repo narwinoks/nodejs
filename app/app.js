@@ -8,7 +8,7 @@ import error from "./middleware/erorr.js";
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://narnowin.vercel.app/",
     credentials: true,
   })
 );
