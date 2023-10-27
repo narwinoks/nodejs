@@ -8,7 +8,7 @@ import error from "./middleware/erorr.js";
 
 app.use(
   cors({
-    origin: "https://narnowin.vercel.app/",
+    origin: "https://narnowin.vercel.app",
     credentials: true,
   })
 );
